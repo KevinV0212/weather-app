@@ -6,7 +6,7 @@ async function fetchWeather(location) {
 }
 
 // returns object with info about weather at [location]
-export async function getWeather(location) {
+export default async function getWeather(location) {
   // call fetch weather based on location
   const weatherData = await fetchWeather(location);
   // break down all of that info into necessary info

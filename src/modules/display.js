@@ -4,13 +4,13 @@ export default async function displayWeather(weatherResponse) {
 
   const location = document.querySelector(".location");
   const condition = document.querySelector(".condition");
-  const conditionIcon = document.querySelector(".condition-info>img");
+  const conditionIcon = document.querySelector(".weather-icon img");
   const temp = document.querySelector(".temp");
   const humidity = document.querySelector(".humidity");
 
   location.textContent = weatherObj.loc;
-  condition.textContent = weatherObj.cond;
+  condition.textContent = `Condition - ${weatherObj.cond}`;
   conditionIcon.setAttribute("src", weatherObj.condIcon);
-  temp.textContent = `${weatherObj.tempF}° / ${weatherObj.tempC}°`;
-  humidity.textContent = `Humidity - ${weatherObj.humid}`;
+  temp.textContent = `Temperature - ${weatherObj.tempF}°F / ${weatherObj.tempC}°C`;
+  humidity.textContent = `Humidity - ${weatherObj.humid}%`;
 }
