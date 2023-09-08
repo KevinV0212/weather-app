@@ -11,5 +11,4 @@ export default async function displayWeather(weatherResponse) {
   condition.textContent = `${weatherObj.cond}`;
   conditionIcon.setAttribute("src", weatherObj.condIcon);
   temp.textContent = `${weatherObj.tempF}°F`;
-  humidity.textContent = `${weatherObj.humid}%`;
 }

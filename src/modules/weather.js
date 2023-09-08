@@ -1,22 +1,44 @@
-async function fetchWeather(location) {
+async function fetchForecast(location) {
   const key = "85bcb1e0a30e45d191242644230309";
-  const request = `http://api.weatherapi.com/v1/current.json?key=${key}&q=${location}`;
-  const response = await fetch(request);
+  const request = `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=2`;
+  const response = await fetch(request, { mode: "cors" });
+
   return response.json();
 }
 
-// returns object with info about weather at [location]
-export default async function getWeather(location) {
-  // call fetch weather based on location
-  const weatherData = await fetchWeather(location);
+// returns object with info about forecast at [location]
+export default async function getForecast(location) {
+  // call fetch forecast based on location
+  const forecastData = await fetchForecast(location);
   // break down all of that info into necessary info
-  const weatherObject = {
-    loc: weatherData.location.name,
-    cond: weatherData.current.condition.text,
-    condIcon: weatherData.current.condition.icon,
-    tempF: weatherData.current.temp_f,
-    tempC: weatherData.current.temp_c,
-    humid: weatherData.current.humidity,
+  const forecastObject = {
+    // data for main section
+    loc: forecastData.location.name,
+    tempF: forecastData.current.temp_f,
+    tempC: forecastData.current.temp_c,
+    cond: forecastData.current.condition.text,
+    condIcon: forecastData.current.condition.icon,
+
+    // data for details section
+    feelF: forecastData.current.feelslike_f,
+    feelC: forecastData.current.feelslike_c,
+    humid: forecastData.current.humidity,
+    pressure: forecastData.current.pressure_mb,
   };
-  return weatherObject;
+  return forecastObject;
 }
+
+// key info
+
+//  location name
+//             temperature
+//             hi and low temperature
+//             general condition (i.e sunny, raining)
+//  condition icon
+
+//         extra info
+//             humidity
+//             feels like temp (both c and f)
+//             percent chance of rain
+//   pressure
+// wind direction and speed (in mph)
