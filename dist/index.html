@@ -4,13 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
-    <link rel="stylesheet" href="style.css" />
     <script src="./main.js" defer></script>
   </head>
   <body>
     <div class="container">
       <form>
-        <label for="location">Enter A Location</label>
+        <label for="location">Change Location</label>
         <input
           type="text"
           id="location"
@@ -19,23 +18,22 @@
         />
         <button type="submit">Submit</button>
       </form>
-      <div class="weather-display">
-        <div class="weather-header">
-          <h2 class="location">Location</h2>
-          <button>Change Temp Unit</button>
+      <div class="weather-display flex-col-center">
+        <div id="weather-main">
+          <h2 id="location">Location</h2>
+          <div id="key-info">
+            <img id="condition-img" src="" alt="" />
+            <p id="temp">Temperature</p>
+            <div id="temp-toggle">
+              <button id="f-toggle">C</button>
+              <button id="c-toggle">C</button>
+            </div>
+          </div>
+          <p id="condition">Condition</p>
         </div>
-        <div class="weather-icon">
-          <img src="" alt="condition-image" />
+        <div id="weather-details">
+          <p id="humidity">Humidity</p>
         </div>
-        <div class="weather-body">
-          <p class="condition">Condition</p>
-          <p class="temp">Temperature</p>
-        </div>
-
-        <p class="humidity">Humidity</p>
-        </div>
-
-        
       </div>
     </div>
   </body>
