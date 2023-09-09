@@ -13,21 +13,30 @@ export default async function getForecast(location) {
   // break down all of that info into necessary info
   const forecastObject = {
     // data for main section
-    loc: data.location.name,
-    tempF: data.current.temp_f,
-    tempC: data.current.temp_c,
-    cond: data.current.condition.text,
-    condIcon: data.current.condition.icon,
-    tempHiF: data.forecast.forecastday[0].day.maxtemp_f,
-    tempHiC: data.forecast.forecastday[0].day.maxtemp_c,
-    tempLoF: data.forecast.forecastday[0].day.mintemp_f,
-    tempLoC: data.forecast.forecastday[0].day.mintemp_c,
+    mainInfo: {
+      loc: data.location.name,
+      tempF: data.current.temp_f,
+      tempC: data.current.temp_c,
+      cond: data.current.condition.text,
+      condIcon: data.current.condition.icon,
+      tempHiF: data.forecast.forecastday[0].day.maxtemp_f,
+      tempHiC: data.forecast.forecastday[0].day.maxtemp_c,
+      tempLoF: data.forecast.forecastday[0].day.mintemp_f,
+      tempLoC: data.forecast.forecastday[0].day.mintemp_c,
+    },
 
     // data for details section
-    feelF: data.current.feelslike_f,
-    feelC: data.current.feelslike_c,
-    humid: data.current.humidity,
-    pressure: data.current.pressure_mb,
+
+    details: {
+      tempFeelF: data.current.feelslike_f,
+      tempFeelC: data.current.feelslike_c,
+      humid: data.current.humidity,
+      uv: data.current.uv,
+      windSpd: data.current.wind_mph,
+      windDir: data.current.wind_dir,
+      vis: data.current.vis_miles,
+      pressure: data.current.pressure_mb,
+    },
   };
   return forecastObject;
 }
