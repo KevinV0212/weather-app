@@ -5,17 +5,22 @@
 
 html {
     font-size: 16px;
+    color: white;
 }
+
 
 body {
-    display:flex;
-    justify-content:center;
+    background-image: url('../assets/background.jpg');
+    background-repeat: no-repeat;
+    
+    display: flex;
+    justify-content: center;
 }
 
+/* Basic flex containers */
 .flex-col-center {
     display: flex;
     flex-direction: column;
-    justify-content:center;
     align-items:center;
     gap: 20px;
 }
@@ -29,13 +34,41 @@ body {
 }
 
 .container {
-    padding: 60px 10px;
+    height: 100%;
     width: 80%;
+    padding: 60px 10px;
     display:flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap:60px;
 }
+
+/* Set font styling based on information priority */
+.priority1 {
+    font-size: 4rem;
+}
+
+.priority2, .active{
+    font-size: 2rem;
+}
+
+.priority3 {
+    font-size: 1.25rem;
+}
+
+.priority4 {
+    font-size: .8rem;
+}
+
+/* Button stylings */
+button {
+    font-size: 1.25rem;
+}
+button .active {
+    font-size: 1.5rem;
+}
+
 
 .weather-display {
     display: grid;

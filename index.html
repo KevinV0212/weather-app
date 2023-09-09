@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
-    <script src="./main.js" defer></script>
+    <script type="module" src="./script.js" defer></script>
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
     <div class="container">
@@ -20,16 +21,20 @@
       </form>
       <div id="weather-display" class="flex-col-center">
         <div id="weather-main" class="flex-col-center">
-          <h2 id="location">Location</h2>
+          <h2 id="location" class="priority2">Location</h2>
           <div id="key-info" class="flex-row-center">
             <img id="condition-icon" src="" alt="" />
-            <p id="temp">Temperature</p>
+            <p id="temp" class="priority1">Temperature</p>
             <div id="temp-toggle" class="flex-col-center">
-              <button id="f-toggle">F</button>
+              <button id="f-toggle" class="active">F</button>
               <button id="c-toggle">C</button>
             </div>
           </div>
-          <p id="condition">Condition</p>
+          <p id="condition" class="priority2">Condition</p>
+          <div id="temp-range" class="flex-row-center">
+            <p id="temp-hi" class="priority3"></p>
+            <p id="temp-lo" class="priority3"></p>
+          </div>
         </div>
       </div>
     </div>

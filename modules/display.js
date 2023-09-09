@@ -4,11 +4,13 @@ export default async function displayWeather(weatherResponse) {
 
   const location = document.querySelector("#location");
   const condition = document.querySelector("#condition");
-  const conditionIcon = document.querySelector("#condition-icon");
   const temp = document.querySelector("#temp");
+  const tempHi = document.querySelector("#temp-hi");
+  const tempLo = document.querySelector("#temp-lo");
 
   location.textContent = weatherObj.loc;
+  temp.textContent = `${weatherObj.tempF}°`;
   condition.textContent = `${weatherObj.cond}`;
-  conditionIcon.setAttribute("src", weatherObj.condIcon);
-  temp.textContent = `${weatherObj.tempF}°F`;
+  tempHi.textContent = `Hi: ${weatherObj.tempHiF}`;
+  tempLo.textContent = `Lo: ${weatherObj.tempLoF}`;
 }
