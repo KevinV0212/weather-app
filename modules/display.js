@@ -24,10 +24,10 @@ export default async function displayWeather(weatherResponse) {
   const vis = document.querySelector("#vis");
   const pressure = document.querySelector("#pressure");
 
-  tempFeel.innerHTML = `<h3>Feels like</h3> ${weatherObj.details.tempFeelF}°`;
-  humid.innerHTML = `<h3>Humidity</h3> ${weatherObj.details.humid}%`;
-  uv.innerHTML = ` <h3>UV Index</h3> ${weatherObj.details.uv}`;
-  wind.innerHTML = `<h3>Wind</h3> ${weatherObj.details.windSpd} mph ${weatherObj.details.windDir}`;
-  vis.InnerHTML = `<h3>Visibility</h3> ${weatherObj.details.vis} mi`;
-  pressure.innerHTML = `<h3>Pressure</h3> ${weatherObj.details.pressure} mb`;
+  tempFeel.innerHTML = `<h3>Feels like</h3> ${weatherObj.extraInfo.tempFeelF}°`;
+  humid.innerHTML = `<h3>Humidity</h3> ${weatherObj.extraInfo.humid}%`;
+  uv.innerHTML = ` <h3>UV Index</h3> ${weatherObj.extraInfo.uv}`;
+  wind.innerHTML = `<h3>Wind</h3> ${weatherObj.extraInfo.windSpd} mph ${weatherObj.extraInfo.windDir}`;
+  vis.InnerHTML = `<h3>Visibility</h3> ${weatherObj.extraInfo.vis} mi`;
+  pressure.innerHTML = `<h3>Pressure</h3> ${weatherObj.extraInfo.pressure} mb`;
 }

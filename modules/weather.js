@@ -27,7 +27,7 @@ export default async function getForecast(location) {
 
     // data for details section
 
-    details: {
+    extraInfo: {
       tempFeelF: data.current.feelslike_f,
       tempFeelC: data.current.feelslike_c,
       humid: data.current.humidity,

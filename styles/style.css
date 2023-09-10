@@ -2,6 +2,7 @@
     --base: #00213D;
     --base-transparent: #00213d6c;
 }
+ /* type stylings  */
 * {
     padding:0; margin:0;
     box-sizing: border-box;
@@ -23,6 +24,29 @@ body {
 ul {
     list-style: none;
 }
+
+form {
+    padding: 5px 10px;
+}
+
+::placeholder{
+    color:whitesmoke;
+}
+input {
+    appearance: none;
+    padding: 5px 10px;
+    color: white;
+    background: none;
+    border:none;
+    border-bottom: 2px solid white;
+}
+
+input:focus-visible{
+    outline:none;
+    background-color: var(--base-transparent);
+    box-shadow: 0px 3px 6px var(--base);
+} 
+
 
 /* Basic flex containers */
 .flex-col-center {
@@ -113,6 +137,9 @@ button.active {
     box-shadow: 0px 3px 6px 2px var(--base);
 }
 
+button .icon {
+    background: none;
+}
 /* general stylings */
 .bg-base {
     padding: 40px 30px;

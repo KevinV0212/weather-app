@@ -6,18 +6,24 @@
     <title>Weather</title>
     <script type="module" src="./script.js" defer></script>
     <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css"
+    />
   </head>
   <body>
     <div class="container">
-      <form>
-        <label for="location-input">Change Location</label>
+      <form class="flex-row-center gap-sm">
         <input
           type="text"
           id="location-input"
+          class="priority3"
           name="location"
           placeholder="Location"
         />
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn-no-bg">
+          <span class="mdi mdi-map-marker-radius icon priority2"></span>
+        </button>
       </form>
       <div id="weather-display" class="flex-col-center">
         <div id="weather-main" class="flex-col-center bg-base">
