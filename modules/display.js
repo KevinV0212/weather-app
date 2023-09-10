@@ -12,8 +12,8 @@ export default async function displayWeather(weatherResponse) {
   location.textContent = weatherObj.mainInfo.loc;
   temp.textContent = `${weatherObj.mainInfo.tempF}°`;
   condition.textContent = `${weatherObj.mainInfo.cond}`;
-  tempHi.textContent = `Hi: ${weatherObj.mainInfo.tempHiF}`;
-  tempLo.textContent = `Lo: ${weatherObj.mainInfo.tempLoF}`;
+  tempHi.textContent = `H:${weatherObj.mainInfo.tempHiF}°`;
+  tempLo.textContent = `L:${weatherObj.mainInfo.tempLoF}°`;
 
   // display extra details
 

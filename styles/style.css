@@ -1,3 +1,8 @@
+
+@font-face {
+    font-family: "WeatherFont";
+    src: url('../assets/fonts/Rubik-VariableFont_wght.ttf') format('truetype');
+}
 :root{
     --base: #00213D;
     --base-transparent: #00213d6c;
@@ -9,6 +14,7 @@
 }
 
 html {
+    font-family: sans-serif;
     font-size: 16px;
     color: white;
 }
