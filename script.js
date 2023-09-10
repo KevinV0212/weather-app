@@ -14,7 +14,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const input = document.querySelector("input");
-  getWeather(input.value)
+  getForecast(input.value)
     .then((weatherObject) => displayWeather(weatherObject))
     .catch(alert);
 });
