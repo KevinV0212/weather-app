@@ -1,3 +1,7 @@
+:root{
+    --base: #00213D;
+    --base-transparent: #00213d6c;
+}
 * {
     padding:0; margin:0;
     box-sizing: border-box;
@@ -42,8 +46,21 @@ ul {
     flex-wrap: wrap;
     gap:20px;
 }
-/* general container */
 
+/* gap stylings */
+.gap-sm {
+    gap: 10px;
+}
+
+.gap-md {
+    gap: 30px;
+}
+
+.gap-lg {
+    gap: 60px;
+}
+
+/* general container */
 .container {
     height: 100%;
     width: 80%;
@@ -74,13 +91,35 @@ ul {
 
 /* Button stylings */
 button {
+    color: white;
     font-size: 1.25rem;
+    cursor: pointer;
+    
 }
-button .active {
-    font-size: 1.5rem;
+button.active {
+    font-size: 2.25rem;
 }
 
+.btn-no-bg {
+    padding: 5px;
+    background: none;
+    border: none;
+    border-radius: 5px
+}
 
+.btn-no-bg:hover {
+    background:white;
+    color: var(--base);
+    box-shadow: 0px 3px 6px 2px var(--base);
+}
 
+/* general stylings */
+.bg-base {
+    padding: 40px 30px;
+
+    background-color: var(--base-transparent);
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px var(--base);
+}
 
 

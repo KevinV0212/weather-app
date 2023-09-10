@@ -20,14 +20,14 @@
         <button type="submit">Submit</button>
       </form>
       <div id="weather-display" class="flex-col-center">
-        <div id="weather-main" class="flex-col-center">
+        <div id="weather-main" class="flex-col-center bg-base">
           <h2 id="location" class="priority2">Location</h2>
           <div id="key-info" class="flex-row-center">
             <img id="condition-icon" src="" alt="" />
             <p id="temp" class="priority1">Temperature</p>
             <div id="temp-toggle" class="flex-col-center">
-              <button id="f-toggle" class="active">F</button>
-              <button id="c-toggle">C</button>
+              <button id="f-toggle" class="active btn-no-bg">F</button>
+              <button id="c-toggle" class="btn-no-bg">C</button>
             </div>
           </div>
           <p id="condition" class="priority2">Condition</p>
@@ -36,13 +36,13 @@
             <p id="temp-lo" class="priority3"></p>
           </div>
         </div>
-        <ul id="weather-extra" class="flex-row-wrap">
-          <li id="temp-feel"></li>
-          <li id="humid"></li>
-          <li id="uv"></li>
-          <li id="wind"></li>
-          <li id="vis"></li>
-          <li id="pressure"></li>
+        <ul id="weather-extra" class="flex-row-wrap gap-md bg-base">
+          <li id="temp-feel" class="flex-col-center gap-sm"></li>
+          <li id="humid" class="flex-col-center gap-sm"></li>
+          <li id="uv" class="flex-col-center gap-sm"></li>
+          <li id="wind" class="flex-col-center gap-sm"></li>
+          <li id="vis" class="flex-col-center gap-sm"></li>
+          <li id="pressure" class="flex-col-center gap-sm"></li>
         </ul>
       </div>
     </div>
