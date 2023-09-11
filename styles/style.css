@@ -77,6 +77,12 @@ input:focus-visible{
     gap:20px;
 }
 
+/* flex item stylings */
+.flex-fill {
+    flex: 1;
+}
+
+
 /* gap stylings */
 .gap-sm {
     gap: 10px;
@@ -146,6 +152,23 @@ button.active {
 button .icon {
     background: none;
 }
+
+
+/* position and size stylings */
+.width-sm {
+    width: 300px;
+    max-width:100%;
+}
+
+.width-md {
+    width: 800px;
+    max-width:100%;
+}
+
+.width-fill {
+    width: 100%;
+}
+
 /* general stylings */
 .bg-base {
     padding: 40px 30px;
@@ -155,4 +178,6 @@ button .icon {
     box-shadow: 0px 3px 6px var(--base);
 }
 
-
+.text-end {
+    text-align: end;
+}
