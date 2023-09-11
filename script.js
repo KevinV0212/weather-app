@@ -1,10 +1,10 @@
 import getForecast from "./modules/weather.js";
 import displayWeather from "./modules/display.js";
 
-let data = null;
+let location = null;
 getForecast("London")
   .then((forecastObj) => {
-    data = forecastObj;
+    location = forecastObj.mainInfo.loc;
     displayWeather(forecastObj, "f");
   })
   .catch(alert);
@@ -16,7 +16,10 @@ form.addEventListener("submit", (e) => {
 
   const input = document.querySelector("input");
   getForecast(input.value)
-    .then((weatherObject) => displayWeather(weatherObject))
+    .then((forecastObj) => {
+      location = forecastObj.mainInfo.loc;
+      displayWeather(forecastObj, "f");
+    })
     .catch(alert);
 });
 
@@ -28,9 +31,8 @@ fToggle.addEventListener("click", (e) => {
   e.preventDefault();
   fToggle.classList.add("active");
   cToggle.classList.remove("active");
-  getForecast("London")
+  getForecast(location)
     .then((forecastObj) => {
-      data = forecastObj;
       displayWeather(forecastObj, "f");
     })
     .catch(alert);
@@ -41,9 +43,8 @@ cToggle.addEventListener("click", (e) => {
   e.preventDefault();
   cToggle.classList.add("active");
   fToggle.classList.remove("active");
-  getForecast("London")
+  getForecast(location)
     .then((forecastObj) => {
-      data = forecastObj;
       displayWeather(forecastObj, "c");
     })
     .catch(alert);
