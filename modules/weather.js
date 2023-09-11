@@ -1,6 +1,6 @@
 async function fetchForecast(location) {
   const key = "85bcb1e0a30e45d191242644230309";
-  const request = `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=3`;
+  const request = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=3`;
   const response = await fetch(request, { mode: "cors" });
   return response.json();
 }
