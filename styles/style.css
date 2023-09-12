@@ -170,6 +170,9 @@ button .icon {
     width: 100%;
 }
 
+.icon {
+    font-size: 2rem;
+}
 /* general stylings */
 .bg-base {
     padding: 40px 30px;
