@@ -1,6 +1,8 @@
 async function fetchForecast(location) {
   const key = "85bcb1e0a30e45d191242644230309";
   const request = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=3`;
+  const loadScreen = document.querySelector(".load-screen");
+  loadScreen.style.display = "block";
   const response = await fetch(request, { mode: "cors" });
   return response.json();
 }

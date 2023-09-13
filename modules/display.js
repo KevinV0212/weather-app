@@ -1,7 +1,8 @@
 // resolves [weatherResponse] then displays information on webpage
 export default async function displayWeather(weatherResponse, tUnit) {
   const weatherObj = await weatherResponse;
-
+  const loadScreen = document.querySelector(".load-screen");
+  loadScreen.style.display = "none";
   // display main info
   const location = document.querySelector("#location");
   location.textContent = weatherObj.mainInfo.loc;
