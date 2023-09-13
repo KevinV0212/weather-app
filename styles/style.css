@@ -74,6 +74,8 @@ input:focus-visible{
 .flex-row-wrap{
     display: flex;
     flex-direction: row;
+    justify-content:center;
+    align-items:center;
     flex-wrap: wrap;
     gap:20px;
 }
@@ -85,6 +87,9 @@ input:focus-visible{
 
 
 /* gap stylings */
+.gap-xs {
+    gap: 3px;
+}
 .gap-sm {
     gap: 10px;
 }

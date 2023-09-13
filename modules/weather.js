@@ -35,9 +35,11 @@ export default async function getForecast(location) {
       uv: data.current.uv,
       windSpd: data.current.wind_mph,
       windDir: data.current.wind_dir,
+      windDeg: Math.round(data.current.wind_degree),
       vis: data.current.vis_miles,
       pressure: data.current.pressure_mb,
     },
   };
+  console.log(forecastObject);
   return forecastObject;
 }
