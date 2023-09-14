@@ -1,11 +1,26 @@
 async function fetchForecast(location) {
   const key = "85bcb1e0a30e45d191242644230309";
   const request = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=3`;
+  let response = null;
   // add loading element
   const locationInput = document.querySelector("#location-input");
   locationInput.value = "Loading...";
   locationInput.disabled = true;
-  const response = await fetch(request, { mode: "cors" });
+  const submitBtn = document.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  try {
+    response = await fetch(request, { mode: "cors" });
+    if (!response.ok) {
+      throw new NetworkError(`Request failed with status ${response.status}`);
+    }
+  } catch (error) {
+    alert("Search Failed");
+    locationInput.disabled = false;
+    locationInput.value = "";
+    submitBtn.disabled = false;
+    return undefined;
+  }
+
   return response.json();
 }
 
@@ -13,6 +28,9 @@ async function fetchForecast(location) {
 export default async function getForecast(location) {
   // call fetch forecast based on location
   const data = await fetchForecast(location);
+  if (data == undefined) {
+    return undefined;
+  }
   // break down all of that info into necessary info
   const forecastObject = {
     // data for main section
@@ -42,6 +60,5 @@ export default async function getForecast(location) {
       pressure: data.current.pressure_mb,
     },
   };
-  console.log(forecastObject);
   return forecastObject;
 }
